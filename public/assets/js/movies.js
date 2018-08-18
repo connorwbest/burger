@@ -3,9 +3,10 @@ $(function() {
     event.preventDefault();
 
     var newMovie = {
-      name: $("#mu")
+      movie_name: $("#mu")
         .val()
-        .trim()
+        .trim(),
+        watched: false
     };
 
     console.log(newMovie);

@@ -15,9 +15,9 @@ router.get("/", function(req,res){
 
 router.post("/api/movies", function(req, res){
     movie.createOne([
-        "movie_name"
+        "movie_name", "watched"
     ], [
-        req.body.name
+        req.body.movie_name
     ], function(result) {
         res.json({id: result.insertId})
     }
