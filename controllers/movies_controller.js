@@ -9,7 +9,7 @@ router.get("/", function(req,res){
             movies: data
         };
         console.log(hbsObject);
-        res.render(__dirname + "index", hbsObject);
+        res.render("index", hbsObject);
     })
 });
 

@@ -1,21 +1,14 @@
 {
-  "name": "burger",
+  "name": "movieList",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "10.0.0"
+  },
   "scripts": {
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/connorwbest/burger.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/connorwbest/burger/issues"
-  },
-  "homepage": "https://github.com/connorwbest/burger#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
