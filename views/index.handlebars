@@ -1,48 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Movie Watch List</h1>
+    <p class="lead">Track the movies you need to watch in 2018</p>
+</div>
 
-<h1>Movie Watch List</h1>
+<div class="container">
 
-<h2>To Watch:</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-title">
+                        To Watch
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                           {{#each movies}} {{#unless watched}} <li>{{movie_name}}
+                            <button class="change-state btn btn-primary" data-id="{{id}}" data-newstate=true>Watched!</button></li>
+                            {{/unless}}
+                            <br> {{/each}}
+                        </ul>
+                    </div>
+                </div>
 
-<ul>
-    {{#each movies}} 
-        {{#unless watched}} 
-            {{movie_name}}
-            <button class="change-state" data-id="{{id}}" data-newstate=true>Watched!</button>
-        {{/unless}}
-    <br> 
-    {{/each}}
-</ul>
+            </div>
+        </div>
 
-<h2>Watched</h2>
+        <div class="col-sm-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-title">
+                        Watched
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            {{#each movies}} {{#if watched}} {{movie_name}} {{/if}}
+                            <br> {{/each}}
+                        </ul>
+                    </div>
+                </div>
 
-<ul>
-    {{#each movies}} 
-        {{#if watched}} 
-            {{movie_name}} 
-        {{/if}}
-        <br> 
-    {{/each}}
-</ul>
-
-<h2>Add a Movie</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="ca">Movie Name:</label>
-        <input type="text" id="mu" name="name">
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Add Movie</button>
-</form>
+    <div class="row justify-content-center" id="addMovie">
+        <div class="col-sm-4">
+            <div class="card movieForm">
+                <div class="form-group">
+                    <form class="create-form">
+
+                        <div class="form-group">
+                            <label for="ca">Movie Name:</label>
+                            <input type="text" id="mu" name="name">
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Add Movie</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{{!--
+<h1>Movie Watch List</h1>
+<div id="toWatch">
+    <h2>To Watch:</h2>
+
+    <ul>
+        {{#each movies}} {{#unless watched}} {{movie_name}}
+        <button class="change-state" data-id="{{id}}" data-newstate=true>Watched!</button>
+        {{/unless}}
+        <br> {{/each}}
+    </ul>
+</div>
+
+<div id="watchedMovies">
+    <h2>Watched</h2>
+
+    <ul>
+        {{#each movies}} {{#if watched}} {{movie_name}} {{/if}}
+        <br> {{/each}}
+    </ul>
+</div>
+
+<div id="form">
+    <h2>Add a Movie</h2>
+    <form class="create-form">
+
+        <div class="form-group">
+            <label for="ca">Movie Name:</label>
+            <input type="text" id="mu" name="name">
+        </div>
+
+        <button type="submit">Add Movie</button>
+    </form>
+</div> --}}
