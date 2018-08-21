@@ -23,3 +23,8 @@ li {
     font-size: 1.5rem;
     font-weight: 200;
 }
+
+.jumbotron {
+    background-image: url(../images/curtain.jpg);
+    color: #fff;
+}
